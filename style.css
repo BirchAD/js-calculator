@@ -74,6 +74,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 10px
 }
   
 .reset {
@@ -125,6 +126,7 @@ main {
 
 .input {
     background-color: var(--color-neutral-very-light-grayish);
+    padding: 10px;
 }
 
 input {
@@ -139,7 +141,10 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-  -moz-appearance:textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
   
