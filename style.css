@@ -46,6 +46,7 @@ main {
 
 .col-1 {
     grid-column: 1 / 2;
+    color: var(--color-neutral-very-dark);
 }
 
 .col-2 {
@@ -73,9 +74,9 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+}
   
-  .reset {
+.reset {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,39 +88,47 @@ main {
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .reset:hover {
-    background-color: #1f9c89;
-  }
-  
-  .totals {
-    color: white;
-  }
+}
 
-  .totals h6 {
+.reset:hover {
+    background-color: #1f9c89;
+}
+  
+.totals {
+    color: white;
+}
+
+.totals h6 {
     margin: 0;
     font-size: 1rem;
     font-weight: normal;
     color: #999;
     margin-left: 10px;
-  }
+}
 
-  .totals h2 {
+.totals h2 {
     margin: 0;
     font-size: 3rem;
     font-weight: bold;
     color: #26c0ab;
-  }
+}
 
-
-  .total-amount {
+.total-amount {
     display: flex;
     align-items: center;
-  }
+}
 
-  .tip-total {
+.tip-total {
     display: flex;
     justify-content: space-between;
+}
+
+.input {
+    background-color: var(--color-neutral-very-light-grayish);
+}
+
+input {
+    background-color: var(--color-neutral-very-light-grayish);
+    border: none
   }
   
