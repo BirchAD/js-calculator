@@ -1,0 +1,10 @@
+/* Colors */
+:root {
+    --color-primary: hsl(172, 67%, 45%);
+    --color-neutral-very-dark: hsl(183, 100%, 15%);
+    --color-neutral-dark-grayish: hsl(186, 14%, 43%);
+    --color-neutral-grayish: hsl(184, 14%, 56%);
+    --color-neutral-light-grayish: hsl(185, 41%, 84%);
+    --color-neutral-very-light-grayish: hsl(189, 41%, 97%);
+    --color-neutral-white: hsl(0, 0%, 100%);
+  }
