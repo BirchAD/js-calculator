@@ -68,3 +68,58 @@ main {
     grid-row: 1 / 4;
     background-color: var(--color-neutral-very-dark);
 }
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin: 20px auto 0;
+    width: 95%;
+    background-color: #26c0ab;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .reset:hover {
+    background-color: #1f9c89;
+  }
+  
+  .totals {
+    color: white;
+  }
+
+  .totals h6 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #999;
+    margin-left: 10px;
+  }
+
+  .totals h2 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #26c0ab;
+  }
+
+
+  .total-amount {
+    display: flex;
+    align-items: center;
+  }
+
+  .tip-total {
+    display: flex;
+    justify-content: space-between;
+  }
+  
