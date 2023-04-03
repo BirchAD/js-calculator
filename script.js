@@ -44,10 +44,12 @@ document.addEventListener("DOMContentLoaded", function() {
   function reset() {
     billInput.value = '';
     customTipInput.value = '';
-    tipInputs[0].checked = false;
     peopleInput.value = '';
     personTotal.textContent = '$0.00';
     totalTotal.textContent = '$0.00';
+    for(let i = 0; i < tipInputs.length; i++) {
+      tipInputs[i].checked = false;
+  }
     resetButton.setAttribute('disabled', '')
   }
 
