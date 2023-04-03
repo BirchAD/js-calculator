@@ -80,7 +80,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
+    padding: 30px;
     border-radius: 10px;
 }
 
@@ -97,6 +97,7 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
+    margin-bottom: 5px;
 }
 
 .reset:hover {
@@ -188,6 +189,7 @@ input[type=number] {
   font-size: 24px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  padding: 10px;
 }
 
 .tip-select label:hover {
@@ -211,10 +213,39 @@ input[type=number] {
   main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    padding: 0;
+    padding-top: 15px;
+    gap: 5px;
   }
 
+  .tip-select label {
+    font-size: 15px;
+  }
   .col-2 {
     grid-column: 1;
     grid-row: 4;
   }
+
+  .tip-select label {
+    padding: 5px;
+    margin: 0;
   }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .tip-total h2 {
+    font-size: 30px;
+  }
+
+  .tip-total h4 {
+    font-size: 12px;
+  }
+
+  .tip-total h6 {
+    font-size: 10px;
+  }
+
+}
