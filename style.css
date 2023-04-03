@@ -136,11 +136,22 @@ h1 {
     background-color: var(--color-neutral-very-light-grayish);
     padding: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input img {
+  align-self: center;
 }
 
 input {
     background-color: var(--color-neutral-very-light-grayish);
-    border: none
+    border: none;
+    cursor: pointer;
+    font-family: 'Space Mono',sans-serif;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    font-size: 18px;
 }
 
 input[type=number]::-webkit-outer-spin-button,
