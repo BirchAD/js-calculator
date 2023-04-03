@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // making the input div's clickable
+  const billInputDiv = document.querySelector('.col-1.row-1');
+  const peopleInputDiv = document.querySelector('.col-1.row-3');
+
+  billInputDiv.addEventListener('click', () => {
+    const billInput = document.getElementById('amount');
+    billInput.focus();
+  });
+
+  peopleInputDiv.addEventListener('click', () => {
+    const peopleInput = document.getElementById('people');
+    peopleInput.focus();
+  });
+
   const billInput = document.getElementById('amount');
   const tipInputs = document.querySelectorAll('input[name="tip"]');
   const customTipInput = document.getElementById('tipCustom');
@@ -41,4 +55,9 @@ document.addEventListener("DOMContentLoaded", function() {
   tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
   peopleInput.addEventListener('input', calculate);
   resetButton.addEventListener('click', reset);
+
+
+  // add event listeners to the form input divs
+
+
 })

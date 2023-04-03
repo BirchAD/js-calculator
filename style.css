@@ -135,6 +135,7 @@ h1 {
 .input {
     background-color: var(--color-neutral-very-light-grayish);
     padding: 10px;
+    cursor: pointer;
 }
 
 input {
