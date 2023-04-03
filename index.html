@@ -36,7 +36,7 @@
     </section>
     <section class="col-1 row-2">
       <h2>Select Tip %</h2>
-      <div class='tip-select'>
+      <form class='tip-select'>
         <input
           type="radio"
           name="tip"
@@ -79,11 +79,12 @@
           placeholder="Custom"
           autocomplete="off"
         />
-      </div>
+      </form>
     </section>
 
     <section class="col-1 row-3">
       <h2>Number of People</h3>
+      <div id="error-message"></div>
       <div class="input">
         <img src="./images/icon-person.svg" alt="">
         <input
