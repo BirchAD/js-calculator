@@ -209,6 +209,11 @@ input[type=number] {
   font-size: 14px;
 }
 
+.reset[disabled] {
+  background-color: gray;
+  color: white;
+}
+
 @media (max-width: 1025px) {
   main {
     grid-template-columns: 1fr;

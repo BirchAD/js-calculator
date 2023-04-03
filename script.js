@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function reset() {
     billInput.value = '';
     customTipInput.value = '';
-    tipInputs[0].checked = true;
+    tipInputs[0].checked = false;
     peopleInput.value = '';
     personTotal.textContent = '$0.00';
     totalTotal.textContent = '$0.00';
@@ -56,8 +56,22 @@ document.addEventListener("DOMContentLoaded", function() {
   peopleInput.addEventListener('input', calculate);
   resetButton.addEventListener('click', reset);
 
+  let activeInputs = 0;
 
-  // add event listeners to the form input divs
+  function toggleResetButton() {
+    resetButton.disabled = activeInputs === 0;
+  }
 
+  function countActiveInputs() {
+    activeInputs = 0;
+    document.querySelectorAll('input').forEach(input => {
+      if (input.value.trim() !== '' || input.value === '0') {
+        activeInputs++;
+      }
+    });
+    toggleResetButton();
+  }
+
+  document.addEventListener('input', countActiveInputs);
 
 })
