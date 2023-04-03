@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
   billInput.addEventListener('input', calculate);
   customTipInput.addEventListener('input', calculate);
   peopleInput.addEventListener('input', calculate);
+  tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
 
   function reset() {
     billInput.value = '';
@@ -58,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   resetButton.addEventListener('click', reset);
-
-  tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
 
   function updateResetButton() {
     if (billInput.value || customTipInput.value || peopleInput.value || isTipInputChecked()) {
@@ -81,5 +80,4 @@ document.addEventListener("DOMContentLoaded", function() {
   customTipInput.addEventListener('input', updateResetButton);
   peopleInput.addEventListener('input', updateResetButton);
   tipInputs.forEach(tipInput => tipInput.addEventListener('change', updateResetButton));
-
 })

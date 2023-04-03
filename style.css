@@ -220,9 +220,9 @@ input[type=number] {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     width: 100%;
-    padding: 0;
+    padding: 10px;
     padding-top: 15px;
-    gap: 5px;
+    gap: 30px;
   }
 
   .tip-select label {
@@ -254,5 +254,9 @@ input[type=number] {
   .tip-total h6 {
     font-size: 10px;
   }
+
+  .reset {
+    height: 40px;
+}
 
 }
