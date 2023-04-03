@@ -8,7 +8,7 @@ body {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
 }
-  
+
 input[type="text"], textarea {
     font-size: 24px;
 }
@@ -76,7 +76,7 @@ main {
     justify-content: space-between;
     padding: 10px
 }
-  
+
 .reset {
     display: flex;
     justify-content: center;
@@ -94,7 +94,7 @@ main {
 .reset:hover {
     background-color: #1f9c89;
 }
-  
+
 .totals {
     color: white;
 }
@@ -147,4 +147,37 @@ input[type=number] {
   appearance: none;
 }
 
-  
+.tip-select {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.tip-select input[type="radio"] {
+  display: none;
+}
+
+.tip-select label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--color-neutral-very-dark);
+  color: var(--color-neutral-white);
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tip-select label:hover {
+  background-color: var(--color-neutral-light-grayish);
+}
+
+.tip-select input[type="radio"]:checked + label {
+  background-color: var(--color-primary);
+}
+
+.tip-select label span {
+  margin-left: 5px;
+}
