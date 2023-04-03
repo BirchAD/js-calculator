@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  billInput.addEventListener('input', calculate);
+  customTipInput.addEventListener('input', calculate);
+  peopleInput.addEventListener('input', calculate);
+
   function reset() {
     billInput.value = '';
     customTipInput.value = '';
@@ -49,23 +53,33 @@ document.addEventListener("DOMContentLoaded", function() {
     totalTotal.textContent = '$0.00';
     for(let i = 0; i < tipInputs.length; i++) {
       tipInputs[i].checked = false;
-  }
+    }
     resetButton.setAttribute('disabled', '')
   }
 
-  billInput.addEventListener('input', calculate);
-  customTipInput.addEventListener('input', calculate);
-  tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
-  peopleInput.addEventListener('input', calculate);
   resetButton.addEventListener('click', reset);
 
+  tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
+
   function updateResetButton() {
-    if (billInput.value || customTipInput.value || peopleInput.value) {
+    if (billInput.value || customTipInput.value || peopleInput.value || isTipInputChecked()) {
       resetButton.removeAttribute('disabled');
     }
+  }
+
+  function isTipInputChecked() {
+    let isChecked = false;
+      for(let i = 0; i < tipInputs.length; i++) {
+        if (tipInputs[i].checked === true); {
+          isChecked = true;
+        }
+      }
+    return isChecked;
   }
 
   billInput.addEventListener('input', updateResetButton);
   customTipInput.addEventListener('input', updateResetButton);
   peopleInput.addEventListener('input', updateResetButton);
+  tipInputs.forEach(tipInput => tipInput.addEventListener('change', updateResetButton));
+
 })
