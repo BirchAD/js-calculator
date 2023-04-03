@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     peopleInput.value = '';
     personTotal.textContent = '$0.00';
     totalTotal.textContent = '$0.00';
+    resetButton.setAttribute('disabled', '')
   }
 
   billInput.addEventListener('input', calculate);
@@ -56,22 +57,13 @@ document.addEventListener("DOMContentLoaded", function() {
   peopleInput.addEventListener('input', calculate);
   resetButton.addEventListener('click', reset);
 
-  let activeInputs = 0;
-
-  function toggleResetButton() {
-    resetButton.disabled = activeInputs === 0;
+  function updateResetButton() {
+    if (billInput.value || customTipInput.value || peopleInput.value) {
+      resetButton.removeAttribute('disabled');
+    }
   }
 
-  function countActiveInputs() {
-    activeInputs = 0;
-    document.querySelectorAll('input').forEach(input => {
-      if (input.value.trim() !== '' || input.value === '0') {
-        activeInputs++;
-      }
-    });
-    toggleResetButton();
-  }
-
-  document.addEventListener('input', countActiveInputs);
-
+  billInput.addEventListener('input', updateResetButton);
+  customTipInput.addEventListener('input', updateResetButton);
+  peopleInput.addEventListener('input', updateResetButton);
 })
