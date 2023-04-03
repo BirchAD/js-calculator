@@ -27,8 +27,17 @@ function calculate() {
   }
 }
 
+function reset() {
+  billInput.value = '';
+  customTipInput.value = '';
+  tipInputs[0].checked = true;
+  peopleInput.value = '';
+  personTotal.textContent = '$0.00';
+  totalTotal.textContent = '$0.00';
+}
 
 billInput.addEventListener('input', calculate);
 customTipInput.addEventListener('input', calculate);
 tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
 peopleInput.addEventListener('input', calculate);
+resetButton.addEventListener('click', reset);
