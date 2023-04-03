@@ -209,7 +209,7 @@ input[type=number] {
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
   main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
