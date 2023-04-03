@@ -7,6 +7,8 @@
 body {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
+    margin: auto 0;
+    margin-top: 50px;
 }
 
 input[type="text"], textarea {
@@ -44,6 +46,10 @@ main {
     margin: 0 auto;
 }
 
+h1 {
+  margin-bottom: 20px;
+}
+
 .col-1 {
     grid-column: 1 / 2;
     color: var(--color-neutral-very-dark);
@@ -74,7 +80,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .reset {
@@ -89,6 +96,7 @@ main {
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .reset:hover {

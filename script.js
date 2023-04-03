@@ -41,4 +41,4 @@ document.addEventListener("DOMContentLoaded", function() {
   tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
   peopleInput.addEventListener('input', calculate);
   resetButton.addEventListener('click', reset);
-});
+})
