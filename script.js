@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   // making the input div's clickable
   const billInputDiv = document.querySelector('.col-1.row-1');
   const peopleInputDiv = document.querySelector('.col-1.row-3');
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const totalTotal = document.getElementById('total-total');
   const resetButton = document.querySelector('.reset');
 
-  function calculate() {
+  const calculate = () => {
     const bill = parseFloat(billInput.value);
     const customTip = parseFloat(customTipInput.value);
     const tipPercent = customTip || parseFloat(document.querySelector('input[name="tip"]:checked').value);
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-
   billInput.addEventListener('input', calculate);
   customTipInput.addEventListener('input', calculate);
   peopleInput.addEventListener('input', calculate);
@@ -56,13 +55,15 @@ document.addEventListener("DOMContentLoaded", function() {
   customTipInput.addEventListener('input', updateResetButton);
   peopleInput.addEventListener('input', updateResetButton);
   tipInputs.forEach(tipInput => tipInput.addEventListener('change', updateResetButton));
-
-  function reset() {
+  
+  const reset = () => {
+    const errorMessage = document.getElementById('error-message');
     billInput.value = '';
     customTipInput.value = '';
     peopleInput.value = '';
     personTotal.textContent = '$0.00';
     totalTotal.textContent = '$0.00';
+    errorMessage.textContent = '';
     for(let i = 0; i < tipInputs.length; i++) {
       tipInputs[i].checked = false;
     }
@@ -71,19 +72,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
   resetButton.addEventListener('click', reset);
 
-  function updateResetButton() {
+  const updateResetButton = () => {
     if (billInput.value || customTipInput.value || peopleInput.value || isTipInputChecked()) {
       resetButton.removeAttribute('disabled');
     }
   }
 
-  function isTipInputChecked() {
+  const isTipInputChecked = () => {
     let isChecked = false;
       for(let i = 0; i < tipInputs.length; i++) {
         if (tipInputs[i].checked === true); {
           isChecked = true;
         }
       }
-    return isChecked;
+    isChecked;
   }
 })
