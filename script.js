@@ -72,23 +72,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resetButton.addEventListener('click', reset);
 
-  // if an input has a value activates the reset button
-
   function updateResetButton() {
     if (billInput.value || customTipInput.value || peopleInput.value || isTipInputChecked()) {
       resetButton.removeAttribute('disabled');
     }
   }
 
-  // checks if any of the tip input radio boxes
-
-  const isTipInputChecked = () => {
+  function isTipInputChecked() {
     let isChecked = false;
       for(let i = 0; i < tipInputs.length; i++) {
         if (tipInputs[i].checked === true); {
           isChecked = true;
         }
       }
-    isChecked;
+    return isChecked;
   }
 })
