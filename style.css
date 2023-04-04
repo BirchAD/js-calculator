@@ -11,6 +11,11 @@ body {
     margin-top: 50px;
 }
 
+header h1 {
+  margin: 0;
+  color: var(--color-neutral-dark-grayish)
+}
+
 input[type="text"], textarea {
     font-size: 24px;
 }
@@ -215,6 +220,7 @@ input[type=number] {
   color: white;
 }
 
+
 @media (max-width: 1025px) {
   main {
     grid-template-columns: 1fr;
@@ -257,6 +263,6 @@ input[type=number] {
 
   .reset {
     height: 40px;
-}
+  }
 
 }
