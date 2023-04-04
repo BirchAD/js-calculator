@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const errorMessage = document.getElementById('error-message');
 
     if (!Number.isInteger(numberOfPeople)) {
-      errorMessage.textContent = 'Please enter a whole number, not a decimal.';
+      errorMessage.textContent = 'Please enter a whole number, not a decimal or 0.';
     } else if (numberOfPeople === 0) {
       errorMessage.textContent = '0 is not a valid entry.';
     } else if (bill && tipPercent && numberOfPeople) {
