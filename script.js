@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   peopleInput.addEventListener('input', updateResetButton);
   tipInputs.forEach(tipInput => tipInput.addEventListener('change', updateResetButton));
   
-  const reset = () => {
+  function reset() {
     const errorMessage = document.getElementById('error-message');
     billInput.value = '';
     customTipInput.value = '';
@@ -72,11 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resetButton.addEventListener('click', reset);
 
-  const updateResetButton = () => {
+  // if an input has a value activates the reset button
+
+  function updateResetButton() {
     if (billInput.value || customTipInput.value || peopleInput.value || isTipInputChecked()) {
       resetButton.removeAttribute('disabled');
     }
   }
+
+  // checks if any of the tip input radio boxes
 
   const isTipInputChecked = () => {
     let isChecked = false;
