@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     peopleInput.focus();
   });
 
+  // calculate elements
   const billInput = document.getElementById('amount');
   const tipInputs = document.querySelectorAll('input[name="tip"]');
   const customTipInput = document.getElementById('tipCustom');
@@ -28,23 +29,33 @@ document.addEventListener("DOMContentLoaded", function() {
     const numberOfPeople = parseFloat(peopleInput.value);
     const errorMessage = document.getElementById('error-message');
 
-    if (numberOfPeople === 0) {
-      errorMessage.textContent = '0 is not a valid entry';
+    if (!Number.isInteger(numberOfPeople)) {
+      errorMessage.textContent = 'Please enter a whole number, not a decimal.';
+    } else if (numberOfPeople === 0) {
+      errorMessage.textContent = '0 is not a valid entry.';
     } else if (bill && tipPercent && numberOfPeople) {
       const tipAmount = bill * (tipPercent / 100);
       const totalAmount = bill + tipAmount;
       const personTip = tipAmount / numberOfPeople;
       const personTotalAmount = totalAmount / numberOfPeople;
-      // string literal doesnt work?
       personTotal.textContent = '$' + personTip.toFixed(2);
       totalTotal.textContent = '$' + personTotalAmount.toFixed(2);
+      errorMessage.textContent = ''; // clear error message
     }
   }
+
 
   billInput.addEventListener('input', calculate);
   customTipInput.addEventListener('input', calculate);
   peopleInput.addEventListener('input', calculate);
   tipInputs.forEach(tipInput => tipInput.addEventListener('change', calculate));
+
+  // reset function on reset button
+
+  billInput.addEventListener('input', updateResetButton);
+  customTipInput.addEventListener('input', updateResetButton);
+  peopleInput.addEventListener('input', updateResetButton);
+  tipInputs.forEach(tipInput => tipInput.addEventListener('change', updateResetButton));
 
   function reset() {
     billInput.value = '';
@@ -75,9 +86,4 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     return isChecked;
   }
-
-  billInput.addEventListener('input', updateResetButton);
-  customTipInput.addEventListener('input', updateResetButton);
-  peopleInput.addEventListener('input', updateResetButton);
-  tipInputs.forEach(tipInput => tipInput.addEventListener('change', updateResetButton));
 })
