@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!Number.isInteger(numberOfPeople)) {
       errorMessage.textContent = 'Please enter a whole number, not a decimal or 0.';
-    } else if (numberOfPeople === 0) {
-      errorMessage.textContent = '0 is not a valid entry.';
+    } else if (numberOfPeople < 0) {
+      errorMessage.textContent = 'Must not be a minus number';
     } else if (bill && tipPercent && numberOfPeople) {
       const tipAmount = bill * (tipPercent / 100);
       const totalAmount = bill + tipAmount;

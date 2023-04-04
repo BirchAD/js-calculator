@@ -265,4 +265,8 @@ input[type=number] {
     height: 40px;
   }
 
+  #tipCustom {
+    padding: 30x;
+  }
+
 }
